@@ -1,6 +1,6 @@
 resource "aws_iam_instance_profile" "grafana-test" {
   name = "grafana-test-ec2"
-  role = "${aws_iam_role.grafana-test.name}"
+  role = aws_iam_role.grafana-test.name
 }
 
 resource "aws_iam_role" "grafana-test" {
@@ -23,7 +23,7 @@ EOF
 }
 
 resource "aws_iam_role_policy_attachment" "aws_ssm" {
-  role       = "${aws_iam_role.grafana-test.name}"
+  role       = aws_iam_role.grafana-test.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEC2RoleforSSM"
 }
 
