@@ -1,6 +1,6 @@
 resource "aws_iam_instance_profile" "grafana-test" {
   name = "grafana-test-ec2"
-  role = "${aws_iam_role.grafana-test.name}"
+  role = aws_iam_role.grafana-test.name
 }
 
 resource "aws_iam_role" "grafana-test" {
