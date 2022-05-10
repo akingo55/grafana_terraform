@@ -12,7 +12,7 @@ jobs:
       - name: Run tfsec with reviewdog output on the PR
         uses: reviewdog/action-tfsec@master
         with:
-          github_token: ${{ secrets.token }} # Change working directory
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Change working directory
           level: info # Get more output from reviewdog
           reporter: github-pr-review # Change reviewdog reporter
           filter_mode: nofilter # Check all files, not just the diff
